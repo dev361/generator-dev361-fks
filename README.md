@@ -22,6 +22,4 @@ Running the **fks generator** will :
  * ask for your project name, 
  * install some dependencies (**Dev361 Front-End Assets Builder**, **Bootstrap**, **Jquery**, **Modernizr**)
  * copy example assets at project root
- * add a few dependencies and place config files at the right place.  
- 
-For config options go find doc at https://github.com/dev361/dev361-front-builder
+ * add a few dependencies and put **Dev361 Front-End Assets Builder** config files at the right place (config options of that package can be found at https://github.com/dev361/dev361-front-builder)

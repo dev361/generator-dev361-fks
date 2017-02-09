@@ -11,6 +11,6 @@
   },
   "bugs": {
     "url": "https://github.com/dev361/generator-dev361-fks/issues"
-  }
+  },
   "description": "Generator-dev361-fks (for FrontKickStart), is a Yeoman generator based on the worldly acclaimed **Dev361 Front-End Assets Builder** (found here : https://github.com/dev361/dev361-front-builder)"
 }

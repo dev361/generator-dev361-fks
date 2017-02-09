@@ -1,0 +1,694 @@
+@charset "UTF-8";
+
+///************************************************************
+// *  @_Author : German Pichardo
+// *
+// *  ---------------
+// *  @_Description :
+// *  ---------------
+// *
+// *  Personal utilities file to use into the HTML without modifying the css
+// *
+// ************************************************************/
+//
+///************************************************************
+// *  ------------
+// *  - Summary -
+// *  ------------
+// *
+// *  @_01 Clear :                  .c-(abbreviation)
+// *  @_02 Display :                .d-(abbreviation)
+// *  @_03 Vertical-Align :         .va-(value)
+// *  @_04 Float :                  .f-(value)
+// *  @_05 Visibility :             .invisible
+// *  @_06 Row with children padding : div.row.colp(value)
+// *  @_07 Cursor :                 .c-(abbreviation)
+// *  @_08 Color Inherit on a:hover : .c-(inherit)
+// *  @_09 Font-Size :              .f(size 8-40)
+// *  @_11 Font-Weight :            .fw-(abbreviation)
+// *  @_12 Text-Transform :         .tt-(abbreviation)
+// *  @_13 Text-Decoration :        .td-(abbreviation)
+// *  @_14 Font-Style :             .fs-(abbreviation)
+// *  @_15 Text-Overflow :          .to-(abbreviation)
+// *  @_16 White-Espace :           .ws-(value)
+// *  @_17 Line-Height :            .lh-(value)
+// *  @_18 Text-Alignment :         .ta-(value)
+// *  @_19 Overflow                 .of(axis)-(value)
+// *  @_20 Width :                  .w-(abbreviation)
+// *  @_21 Max-Width :              .max-w(value)
+// *  @_22 Min-Width :              .min-w(value)
+// *  @_23 Height :                 .h-(value)
+// *  @_24 Position :               .p-(value) || .(value)
+// *  @_25 Box-Shadow :             .box-shadow-(value)
+// *  @_26 Border-Radius :          .radius-(direction)(value)
+// *  @_27 Opacity :                .o-(value 15-85)
+// *  @_28 Border :                 .b-(value) || .b(direction)-(value)
+// *  @_29 Backgrounds :            .bg-(color)
+// *  @_30 Margins :                .m(value 0-30) || .ml(value 0-30) || .mr(value 0-30) || .mb(value 0-30) || .mt(value 0-30)
+// *  @_31 Margin-Left-Right :      .mlr(value 0-30)
+// *  @_32 Margin-Bottom-Top :      .mbt(value 0-30)
+// *  @_33 Padding :                .p(side)(value 0-30) || .pl(value 0-30) || .pr(value 0-30) || .pb(value 0-30) || .pt(value 0-30)
+// *  @_34 Padding-Left-Right :     .plr(value 0-30)
+// *  @_35 Padding-Bottom-Top :     .pbt(value 0-30)
+// *  @_36 Hide text :              .ht
+// *
+// ************************************************************/
+
+///************************************************************
+// *  @_01 : Clear : .c-(abbreviation)
+// ************************************************************/
+.clear {
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+}
+
+.c-b {
+  clear: both;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+///************************************************************
+// *  @_02 : Display : .d-(abbreviation)
+// ************************************************************/
+
+.block,
+.d-b {
+  display: block !important;
+}
+
+.inline-block,
+.d-ib {
+  display: inline-block;
+  *display: inline;
+  *z-index: 1 !important;
+}
+
+.d-tb {
+  display: table;
+}
+.d-tb-c {
+  display: table-cell;
+}
+
+///************************************************************
+// *  @_03 : Vertical-align : .va-(value)
+// ************************************************************/
+
+.va-middle {
+  vertical-align: middle;
+
+}
+ul.va-middle {
+  >li {
+    vertical-align: middle;
+  }
+}
+.va-top {
+  vertical-align: top;
+}
+
+///************************************************************
+// *  @_04 : Float : .f-(value)
+// ************************************************************/
+
+.f-none {
+  float: none !important;
+}
+.f-left {
+  float: left !important;
+}
+.f-right {
+  float: right !important;
+}
+
+///************************************************************
+// *  @_05 : Visibility
+// ************************************************************/
+
+.invisible {
+  visibility: hidden;
+}
+
+///************************************************************
+// *  @_06 : Row with children padding : .row.colp(value)
+// ************************************************************/
+
+.colp0 > [class*='col-'] {
+  padding-left:0px;
+  padding-right:0px;
+}
+.colp5 > [class*='col-'] {
+  padding-left:5px;
+  padding-right:5px;
+}
+.colp10 > [class*='col-'] {
+  padding-left:10px;
+  padding-right:10px;
+}
+.colp20 > [class*='col-'] {
+  padding-left:20px;
+  padding-right:20px;
+}
+///************************************************************
+// *  @_07 : Cursor : .c-(abbreviation)
+// ************************************************************/
+
+.c-p,
+.clickable {
+  cursor: pointer;
+}
+
+.c-d,
+.no-clickable {
+  cursor: default !important;
+}
+
+.c-na,
+.no-allowed {
+  cursor: not-allowed !important;
+}
+
+///************************************************************
+// *  @_08 : Color Inherit on a:hover
+// ************************************************************/
+
+//Color inherit
+.c-i,
+.c-i:hover,
+.c-i:focus{
+  color: inherit;
+}
+///************************************************************
+// *  @_09 : Font-Size : .f(value 8-40)
+// ************************************************************/
+
+@for $i from 8 through 50 {
+  .f#{$i} {font-size:$i+px !important;}
+}
+
+///************************************************************
+// *  @_11 : Font-Weight : .fw-(abbreviation)
+// ************************************************************/
+
+.normal,
+.fw-n {
+  font-weight: normal;
+}
+
+.bold,
+.fw-b {
+  font-weight: bold !important;
+}
+
+///************************************************************
+// *  @_12 : Text-Transform : .tt-(abbreviation)
+// ************************************************************/
+
+.upper,
+.tt-u {
+  text-transform: uppercase;
+}
+.lower,
+.tt-l {
+  text-transform: lowercase;
+}
+
+///************************************************************
+// *  @_13 : Text-Decoration : .td-(abbreviation)
+// ************************************************************/
+
+a.td-n{
+  text-decoration: none !important;
+  @include hover-focus-active {
+    i {
+      text-decoration: none !important;
+    }
+  }
+}
+
+.td-u,
+a.td-u:hover {
+  text-decoration: underline;
+}
+.td-lt,
+.cross-line {
+  text-decoration: line-through;
+}
+///************************************************************
+// *  @_14 : letter-spacing : .ls-(abbreviation)
+// ************************************************************/
+.ls-normal {
+  letter-spacing:normal !important;
+}
+///************************************************************
+// *  @_14 : Font-Style : .fs-(abbreviation)
+// ************************************************************/
+
+.italic,
+.fs-i {
+  font-style: italic;
+}
+
+.fs-n {
+  font-style: normal;
+}
+
+///************************************************************
+// *  @_15 : Text-Overflow : .to-(abbreviation)
+// ************************************************************/
+
+.ellip,
+.to-e {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.to-i {
+  text-overflow: inherit;
+}
+
+///************************************************************
+// *  @_16 : White-Espace : .ws-(value)
+// ************************************************************/
+
+.ws-normal {
+  white-space: normal;
+}
+.ws-nowrap{
+  white-space: nowrap;
+}
+
+///************************************************************
+// *  @_17 : Line-Height : .lh-(value)
+// ************************************************************/
+.lh-n {
+  line-height: normal;
+}
+
+.lh-18 {
+  line-height: 18px;
+}
+
+///************************************************************
+// *  @_18 : Text-Alignment : .ta-(value)
+// ************************************************************/
+
+.ta-left {
+  text-align:left;
+}
+
+.ta-center {
+  text-align:center;
+}
+
+.ta-right {
+  text-align:right;
+}
+
+.ta-justify,
+.justify {
+  text-align:justify;
+}
+
+///************************************************************
+// *  @_19 : Overflow .of(axis)-(value)
+// ************************************************************/
+
+.of-visible {
+  overflow: visible;
+}
+.of-hidden {
+  overflow: hidden;
+}
+
+///************************************************************
+// *  @_20 : Width : .w-(abbreviation)
+// ************************************************************/
+
+.w-1 {
+  width: 1%;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+.w-100 {
+  width:100% !important;
+}
+
+///************************************************************
+// *  @_21 : Max-Width : .max-w(value)
+// ************************************************************/
+
+.max-w100 {
+  max-width: 100%;
+}
+
+.center {
+  @include center-block;
+}
+
+///************************************************************
+// *  @_22 : Min-Width : .min-w(value)
+// ************************************************************/
+
+.min-w100 {
+  min-width: 100% !important;
+}
+
+///************************************************************
+// *  @_23 : Height : .h-(value)
+// ************************************************************/
+
+.h-100 {
+  height: 100%;
+}
+.h-auto {
+  height: auto;
+}
+
+///************************************************************
+// *  @_24 : Position : .p-(value) || .(value)
+// ************************************************************/
+
+.relative,
+.p-relative {
+  position: relative;
+}
+
+.absolute,
+.p-absolute {
+  position: absolute;
+}
+.static,
+.p-static {
+  position: static;
+}
+.fixed,
+.p-fixed {
+  position: static;
+}
+///************************************************************
+// *  @_25 : Box-Shadow : .box-shadow-(value)
+// ************************************************************/
+
+.no-shadow,
+.bs-0 {
+  @include box-shadow(none);
+}
+
+///************************************************************
+// *  @_26 : Border-Radius : .radius-(direction)(value)
+// ************************************************************/
+
+.no-radius {
+  @include border-radius(0);
+}
+.radius-4 {
+  @include border-radius(4px);
+}
+.radius-5 {
+  @include border-radius(5px);
+}
+.radius-b5 {
+  @include border-bottom-radius (5px);
+}
+.radius-t5 {
+  @include border-top-radius (5px);
+}
+.radius-l5 {
+  @include border-left-radius (5px);
+}
+.radius-r5 {
+  @include border-right-radius (5px);
+}
+
+///************************************************************
+// *  @_27 : Opacity : .o-(value 15-85)
+// ************************************************************/
+
+.o-15 {
+  @include opacity(0.15);
+}
+
+.o-25 {
+  @include opacity(0.25);
+}
+
+.o-35 {
+  @include opacity(0.35);
+}
+
+.o-45 {
+  @include opacity(0.45);
+}
+
+.o-55 {
+  @include opacity(0.55);
+}
+
+.o-65 {
+  @include opacity(0.65);
+}
+
+.o-75 {
+  @include opacity(0.75);
+}
+
+.o-85 {
+  @include opacity(0.85);
+}
+
+///************************************************************
+// *  @_28 : Border : .b-(value) || .b(direction)-(value)
+// ************************************************************/
+
+.no-border,
+.b-0 {
+  border: 0 !important;
+}
+
+.bt-0 {
+  @include border-top(0);
+}
+
+.bt-1 {
+  @include border-top($border-width:1px, $border-style: solid, $border-color:transparent);
+}
+
+.bb-0 {
+  @include border-bottom($border-width:1px, $border-style: solid, $border-color:transparent);
+}
+
+.bb-1 {
+  @include border-bottom($border-width:1px, $border-style: solid, $border-color:transparent);
+}
+
+.bl-0 {
+  @include border-left($border-width:1px, $border-style: solid, $border-color:transparent);
+}
+
+.bl-1 {
+  @include border-left($border-width:1px, $border-style: solid, $border-color:transparent);
+}
+
+.br-0 {
+  @include border-right($border-width:1px, $border-style: solid, $border-color:transparent);
+}
+
+.br-1 {
+  @include border-right($border-width:1px, $border-style: solid, $border-color:transparent);
+}
+
+
+.b-bt-1 {
+  @include border-top($border-width:1px, $border-style: solid, $border-color:transparent);
+  @include border-bottom($border-width:1px, $border-style: solid, $border-color:transparent);
+}
+
+.b-lr-1 {
+  @include border-left($border-width:1px, $border-style: solid, $border-color:transparent);
+  @include border-right($border-width:1px, $border-style: solid, $border-color:transparent);
+}
+
+///************************************************************
+// *  @_29 : Backgrounds : .bg-(color)
+// ************************************************************/
+
+.bg-0,
+.no-bg {
+  background: none !important;
+}
+
+///************************************************************
+// *  @_30 : Margins : .m(side)(value 0-30)
+// ************************************************************/
+
+.m0a {
+  margin:0 auto;
+}
+
+@for $i from 0 through 6 {
+  .m#{$i*5} {
+    margin:#{$i*5+px};
+  }
+}
+
+
+///************************************************************
+// *  @_30-a : Margin-Left : .ml(value)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .ml#{$i*5} {
+    margin-left:#{$i*5+px};
+  }
+}
+
+///************************************************************
+// *  @_30-b : Margin-Right : .mr(value)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .mr#{$i*5} {
+    margin-right:#{$i*5+px};
+  }
+}
+
+///************************************************************
+// *  @_30-c : Margin-Bottom : .mb(value)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .mb#{$i*5} {
+    margin-bottom:#{$i*5+px};
+  }
+}
+
+
+///************************************************************
+// *  @_30-d : Margin-Top : .mt(value)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .mt#{$i*5} {
+    margin-top:#{$i*5+px};
+  }
+}
+
+
+///************************************************************
+// *  @_31 : Margin-Left-Right : .mlr(value 0-30)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .mlr#{$i*5} {
+    margin-left:#{$i*5+px};
+    margin-right:#{$i*5+px};
+  }
+}
+
+///************************************************************
+// *  @_32 : Margin-Bottom-Top : .mbt(value 0-30)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .mbt#{$i*5} {
+    margin-bottom:#{$i*5+px};
+    margin-top:#{$i*5+px};
+  }
+}
+
+///************************************************************
+// *  @_33 : Padding: .p(value 0-30)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .p#{$i*5} {
+    padding:#{$i*5+px};
+  }
+}
+
+
+///************************************************************
+// *  @_33-a : Padding-Left : .pl(value 0-30)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .pl#{$i*5} {
+    padding-left:#{$i*5+px};
+  }
+}
+
+///************************************************************
+// *  @_33-b : Padding-Right : .pr(value 0-30)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .pr#{$i*5} {
+    padding-right:#{$i*5+px};
+  }
+}
+
+///************************************************************
+// *  @_33-c : Padding-Bottom : .pb(value 0-30)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .pb#{$i*5} {
+    padding-bottom:#{$i*5+px};
+  }
+}
+
+///************************************************************
+// *  @_33-d : Padding-Top : .pt(value 0-30)
+// ************************************************************/
+
+@for $i from 0 through 6 {
+  .pt#{$i*5} {
+    padding-top:#{$i*5+px};
+  }
+}
+
+///************************************************************
+// *  @_34 : Padding-Left-Right : .plr(value 0-30)
+// ************************************************************/
+@for $i from 0 through 6 {
+  .plr#{$i*5} {
+    padding-left:#{$i*5+px};
+    padding-right:#{$i*5+px};
+  }
+}
+
+///************************************************************
+// *  @_35 : Padding-Bottom-Top : .pbt(value 0-30)
+// ************************************************************/
+@for $i from 0 through 6 {
+  .pbt#{$i*5} {
+    padding-bottom:#{$i*5+px};
+    padding-top:#{$i*5+px};
+  }
+}
+
+///************************************************************
+// *  @_36 Hide text : .ht
+// ************************************************************/
+
+.ht {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}

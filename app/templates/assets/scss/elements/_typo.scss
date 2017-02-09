@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+///*************************************
+//* @_00 Styles de base typo
+//*************************************/
+
+// lissage des typos sur mac
+html{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1, h2, h3, h4, h5, h5, h6{
+  margin-top:0;
+  margin-bottom:0.2em;
+  line-height: 1.2em;
+}
+h1, .styleH1{
+
+}
+
+h2, .styleH2{
+
+}
+h3, .styleH3{
+
+}
+h4, .styleH4{
+
+}
+h5, .styleH5{
+
+}
+h6, .styleH6{
+
+}
+
+p{
+  margin:0 0 0.2em 0;
+}
+ul, ol, dl{
+  margin-top:0;
+  padding-left: 0;
+  list-style-position: inside; 
+}
+ul{
+  list-style-type: disc;
+}
+dd{
+  margin-left:0;
+}
+a{
+
+}

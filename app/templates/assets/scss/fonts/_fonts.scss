@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+///*************************************
+//* @_00 Fontface Local : font-family: 'robotoregular';
+//*************************************/
+
+@font-face {
+  font-family: 'robotocondensed';
+  src: url('./../fonts/roboto/roboto_condensed/RobotoCondensed-Regular-webfont.eot');
+  src: url('./../fonts/roboto/roboto_condensed/RobotoCondensed-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('./../fonts/roboto/roboto_condensed/RobotoCondensed-Regular-webfont.woff') format('woff'),
+  url('./../fonts/roboto/roboto_condensed/RobotoCondensed-Regular-webfont.ttf') format('truetype'),
+  url('./../fonts/roboto/roboto_condensed/RobotoCondensed-Regular-webfont.svg#robotoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+///*************************************
+//* @_00 Fontface Google Fonts
+//*************************************/
+
+@mixin font( $fFamily:1, $fWeight:normal, $fStyle:normal ) {
+  ///*************************************
+  //* @_00 Fontface : Raleway 400,600,700
+  //*************************************/
+  @if $fFamily == 1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: $fWeight;
+    font-style: $fStyle;
+  }
+  ///*************************************
+  //* @_00 Fontface : Dancing Script 400,700
+  //*************************************/
+  @if $fFamily == 2 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: $fWeight;
+    font-style: $fStyle;
+  }
+}
+
+//@include font(1);
+//@include font(1,$regular);
+//@include font(1,$regular,italic);

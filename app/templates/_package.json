@@ -1,0 +1,19 @@
+{
+  "name": "<%= name %>",
+  "author": "dev361",
+  "license": "ISC",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "dev361-front-builder": "^1.0.4",
+    "jquery": "^3.1.1",
+    "npm-modernizr": "^2.8.3"
+  },
+  "scripts": {
+    "dfb" : "node_modules/.bin/dfb help",
+    "dfb:build" : "./node_modules/.bin/dfb build",
+    "dfb:build:prod" : "./node_modules/.bin/dfb build:prod",
+    "dfb:watch" : "./node_modules/.bin/dfb watch",
+    "dfb:live" : "./node_modules/.bin/dfb live"
+  }
+}

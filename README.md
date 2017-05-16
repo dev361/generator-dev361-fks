@@ -11,7 +11,7 @@ $ npm install -g yo yeoman-generator
 ```
 And then install fks :
 ```
-$ npm install generator-dev361-fks
+$ npm install -g generator-dev361-fks
 ```
 And then run the generator :
 ```
